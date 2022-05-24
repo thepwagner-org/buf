@@ -8,7 +8,7 @@ RUN go build -o /protoc-gen-go github.com/golang/protobuf/protoc-gen-go
 RUN go build -o /protoc-gen-twirp github.com/twitchtv/twirp/protoc-gen-twirp
 
 
-FROM alpine:3.15.4@sha256:4edbd2beb5f78b1014028f4fbb99f3237d9561100b6881aabbf5acce2c4f9454 AS buf
+FROM alpine:3.16.0@sha256:686d8c9dfa6f3ccfc8230bc3178d23f84eeaf7e457f36f271ab1acc53015037c AS buf
 
 # renovate: datasource=github-releases depName=bufbuild/buf versioning=semver
 ARG BUF_VERSION=v1.4.0
