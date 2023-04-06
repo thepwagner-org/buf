@@ -10,7 +10,7 @@ RUN go build -o /protoc-gen-twirp github.com/twitchtv/twirp/protoc-gen-twirp
 
 FROM alpine:3.17.3@sha256:124c7d2707904eea7431fffe91522a01e5a861a624ee31d03372cc1d138a3126 AS buf
 
-# renovate: datasource=github-releases depName=bufbuild/buf versioning=semver
+# renovate: datasource=github-release-attachments depName=bufbuild/buf versioning=semver
 ARG BUF_VERSION=v1.17.0
 ARG BUF_CHECKSUM=a4b18f4e44fd918847e310b93ad94ea66913f2040956f856520b92f731e52d7f
 
