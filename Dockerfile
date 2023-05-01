@@ -29,7 +29,7 @@ RUN apk --no-cache add curl \
   && chmod +x /usr/local/bin/buf \
   && apk del curl minisign
 
-FROM gcr.io/distroless/static-debian11:latest@sha256:a01d47d4036cae5a67a9619e3d06fa14a6811a2247b4da72b4233ece4efebd57
+FROM gcr.io/distroless/static-debian11:latest@sha256:7198a357ff3a8ef750b041324873960cf2153c11cc50abb9d8d5f8bb089f6b4e
 COPY --from=buf /usr/local/bin/buf /usr/local/bin/buf
 COPY --from=protoc-gen-go /protoc-gen-go /usr/local/bin/protoc-gen-go
 COPY --from=protoc-gen-go /protoc-gen-twirp /usr/local/bin/protoc-gen-twirp
