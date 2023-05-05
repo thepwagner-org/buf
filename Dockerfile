@@ -1,4 +1,4 @@
-FROM golang:1.20.4@sha256:4dd688d42e7c0af5564b96105b11cfc6c6264fa94224234bf6d9f34edd06c18b AS protoc-gen-go
+FROM golang:1.20.4@sha256:31a8f92b17829b3ccddf0add184f18203acfd79ccc1bcb5c43803ab1c4836cca AS protoc-gen-go
 RUN mkdir /app
 WORKDIR /app
 COPY go.mod .
