@@ -11,14 +11,13 @@ RUN go build -o /protoc-gen-twirp github.com/twitchtv/twirp/protoc-gen-twirp
 FROM alpine:3.18.4@sha256:eece025e432126ce23f223450a0326fbebde39cdf496a85d8c016293fc851978 AS buf
 
 # renovate: datasource=github-release-attachments depName=bufbuild/buf versioning=semver
-ARG BUF_VERSION=v1.27.1
-ARG BUF_CHECKSUM=64e01fd0a74e340dc3caa3f83f3db578ca08d7d0767b3e6b52e04656387477c1
+ARG BUF_VERSION=v1.27.2
+ARG BUF_CHECKSUM=512893e5802eff80611104fb0aa75cc3729d95ef7697deddf5e7e86f468408b3
 
 ARG BUF_MINISIGN_KEY=RWQ/i9xseZwBVE7pEniCNjlNOeeyp4BQgdZDLQcAohxEAH5Uj5DEKjv6
 ARG BUFF_URL=https://github.com/bufbuild/buf/releases/download/${BUF_VERSION}/buf-Linux-x86_64
 ARG BUFF_DIGESTS_URL=https://github.com/bufbuild/buf/releases/download/${BUF_VERSION}/sha256.txt
-RUN apk --no-cache add curl \
-  && apk --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community add minisign \
+RUN apk --no-cache add curl minisign \
   && mkdir -p /buf \
   && curl -Lo /buf/sha256.txt "$BUFF_DIGESTS_URL" \
   && curl -Lo /buf/sha256.txt.minisig "$BUFF_DIGESTS_URL.minisig" \
