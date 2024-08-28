@@ -11,8 +11,8 @@ RUN go build -o /protoc-gen-twirp github.com/twitchtv/twirp/protoc-gen-twirp
 FROM alpine:3.20.2@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5 AS buf
 
 # renovate: datasource=github-release-attachments depName=bufbuild/buf versioning=semver
-ARG BUF_VERSION=v1.37.0
-ARG BUF_CHECKSUM=a38a2539e5a883e6206fa322beae7bd7c112544839fe8fce20fb4baaf5ffb379
+ARG BUF_VERSION=v1.39.0
+ARG BUF_CHECKSUM=657eaafbe1cbeafecfda15386004bd3253fc91162e68cd52185937e3ff4d7afe
 
 ARG BUF_MINISIGN_KEY=RWQ/i9xseZwBVE7pEniCNjlNOeeyp4BQgdZDLQcAohxEAH5Uj5DEKjv6
 ARG BUFF_URL=https://github.com/bufbuild/buf/releases/download/${BUF_VERSION}/buf-Linux-x86_64
